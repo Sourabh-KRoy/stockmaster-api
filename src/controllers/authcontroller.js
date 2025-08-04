@@ -92,7 +92,7 @@ const login = async (req, res) => {
       secure: true, // Required for 'SameSite: None'
       sameSite: "None", // Allows cross-origin cookies
       maxAge: 24 * 60 * 60 * 1000,
-      path=/
+      path: "/"
     });
 
     const adminObj = admin.toObject();
