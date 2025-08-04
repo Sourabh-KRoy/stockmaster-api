@@ -33,7 +33,7 @@ app.use(cookieParser());
 // ✅ CORS configuration (for frontend on localhost:5173)
 app.use(
   cors({
-    origin: "http://localhost:5173", // <-- frontend URL
+    origin: ["http://localhost:5173", "https://stockmaster-1z4t.onrender.com"], // <-- frontend URL
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
