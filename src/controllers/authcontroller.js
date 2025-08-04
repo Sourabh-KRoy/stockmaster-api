@@ -92,7 +92,7 @@ const login = async (req, res) => {
       secure: true, // Required for 'SameSite: None'
       sameSite: "None", // Allows cross-origin cookies
       maxAge: 24 * 60 * 60 * 1000,
-      path: "/"
+      path: "/",
     });
 
     const adminObj = admin.toObject();
@@ -108,8 +108,9 @@ const logout = (req, res) => {
   try {
     res.clearCookie("token", {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      secure: true,
+      sameSite: "None",
+      path: "/",
     });
     res.status(200).json({ message: "Logged out successfully" });
   } catch (error) {
